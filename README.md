@@ -101,7 +101,6 @@ Acesse **Histórico** na tela inicial para rever as sessões. Clique em **Export
 ├─ historico.py             # Visualização e exportação (TXT/CSV)
 ├─ assets/                  # Imagens, ícones, fundos
 ├─ sons/                    # Efeitos sonoros
-├─ videos/                  # Vídeos de abertura/transição (opcional)
 ├─ configs/
 │  ├─ historico_log.jsonl   # Log das sessões (gravado automaticamente)
 │  └─ exports/              # TXT/CSV exportados pelo usuário
