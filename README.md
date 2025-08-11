@@ -17,13 +17,10 @@ Jogo de perguntas e respostas com **roda da sorte** para tornar aulas e revisõe
 # Sumário
 - [Como jogar](#como-jogar)
 - [Recursos](#recursos)
-- [Instalação](#instalação)
 - [Executar](#executar)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Bibliotecas e stack](#bibliotecas-e-stack)
-- [Empacotar (EXE)](#empacotar-exe)
 - [Adicionar/editar perguntas](#adicionareditar-perguntas)
-- [Problemas comuns](#problemas-comuns)
 - [Licença](#licença)
 
 ---
