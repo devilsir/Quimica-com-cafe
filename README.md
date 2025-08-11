@@ -33,7 +33,7 @@ Jogo de perguntas e respostas com **roda da sorte** para tornar aulas e revisõe
 ## 1) Introdução
 Abra o app e clique em **Começar** para ir à tela inicial.
 
-## 2) Tela inicial
+## 2) Tela de confgurações
 Defina rapidamente as regras da sessão:
 - **Nº de equipes**
 - **Tempo de resposta:** 1:00 a 5:00 (passos de 30 s)
