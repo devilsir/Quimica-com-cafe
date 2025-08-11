@@ -118,4 +118,4 @@ Acesse **Histórico** na tela inicial para rever as sessões. Clique em **Export
 ---
 
 # Licença
-Distribuído sob a **MIT License**. Veja `LICENSE`.
+Distribuído sob a **MIT License**. Veja [LICENSE](https://github.com/devilsir/Quimica-com-cafe/blob/main/LICENSE).
