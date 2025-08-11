@@ -17,7 +17,6 @@ Jogo de perguntas e respostas com **roda da sorte** para tornar aulas e revisõe
 # Sumário
 - [Como jogar](#como-jogar)
 - [Recursos](#recursos)
-- [Executar](#executar)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Bibliotecas e stack](#bibliotecas-e-stack)
 - [Adicionar/editar perguntas](#adicionareditar-perguntas)
