@@ -88,36 +88,6 @@ Acesse **Histórico** na tela inicial para rever as sessões. Clique em **Export
 
 ---
 
-# Instalação
-
-> Recomendado: **Python 3.11**
-
-```bash
-# 1) (Opcional) Ambiente virtual
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
-
-# 2) Dependências
-pip install --upgrade pip
-pip install kivy ffpyplayer
-```
-
-> **Windows:** se áudio/vídeo não tocar, reinstale `ffpyplayer` (`pip install --force-reinstall ffpyplayer`).
-
----
-
-# Executar
-
-Na raiz do projeto:
-
-```bash
-python telas_e_botoes.py
-```
-
-O app inicia com **loading**, depois segue para a **introdução**.
 
 ---
 
@@ -149,41 +119,6 @@ O app inicia com **loading**, depois segue para a **introdução**.
 - **Áudio/Vídeo:** [ffpyplayer](https://github.com/matham/ffpyplayer)
 - **Dados/Exportação:** `json`, `csv` (stdlib)
 - **Utilitários:** `uuid`, `glob`, `random`, `time`, `datetime` (stdlib)
-
----
-
-# Empacotar (EXE)
-
-## Opção A — direto pelo PyInstaller
-```bash
-pyinstaller --noconfirm --windowed --name "Roleta_Quimica" telas_e_botoes.py
-```
-Depois, copie **assets/**, **sons/**, **videos/**, **configs/** e **dataperguntas/** para a pasta do executável (ou configure `--add-data`).
-
-## Opção B — usando `.spec`
-Se já tiver um `.spec` com `datas/binaries` ajustado:
-```bash
-pyinstaller Roleta_Quimica.spec
-```
-
-> Para criar um **instalador** com wizard, use **Inno Setup** e inclua as pastas do jogo na seção `Files`.
-
----
-
-# Adicionar/editar perguntas
-1. Abra **dataperguntas/** e escolha o JSON do modo desejado.
-2. Cada item contém: **área**, **dificuldade**, **enunciado**, **alternativas** e **correta**.
-3. Salve e reinicie o jogo.
-
-> Sugestão: padronize nomes de **áreas** e **dificuldades** para melhor distribuição na roda.
-
----
-
-# Problemas comuns
-- **Sem som/vídeo:** `pip install --force-reinstall ffpyplayer`
-- **Assets não carregam:** confirme pastas **assets/**, **sons/**, **videos/** ao lado do executável (build) ou na raiz (dev)
-- **Exportação falhou:** verifique permissões na pasta `configs/exports/`
-- **Roda sem áreas:** selecione ao menos 1 **área** e 1 **dificuldade** antes de iniciar
 
 ---
 
