@@ -8,9 +8,12 @@
 
 Jogo de perguntas e respostas com **roda da sorte** para tornar aulas e revisões mais engajantes. Defina tempo por questão, equipes, gire a roda e responda. O placar é atualizado em tempo real e cada sessão fica registrada no **Histórico**, com **exportação TXT/CSV**.
 
-<div align="center">
-  <img src="docs/intro.png" alt="Tela de introdução" width="90%"/>
-</div>
+<img width="842" height="425" alt="image" src="https://github.com/user-attachments/assets/c07aa9fa-9598-4dff-b936-4c13ff4a63a5" />
+<img width="814" height="407" alt="image" src="https://github.com/user-attachments/assets/ad6a323a-f086-4396-9cea-205a004a19a8" />
+<img width="729" height="365" alt="image" src="https://github.com/user-attachments/assets/1f733ccf-cdda-40bb-a054-1b735eec2a26" />
+<img width="738" height="373" alt="image" src="https://github.com/user-attachments/assets/d8881d39-4f9e-4243-aa40-f3052567c2b5" />
+
+
 
 ---
 
@@ -37,9 +40,6 @@ Defina rapidamente as regras da sessão:
 - **Predefinições** (opcional): carregam filtros prontos
 - Acesse **Histórico**, **Adicionar Perguntas** ou **Listar Perguntas** conforme a necessidade
 
-<div align="center">
-  <img src="docs/menu.png" alt="Tela inicial: menu e ajustes rápidos" width="90%"/>
-</div>
 
 Clique em **Iniciar Jogo**.
 
@@ -51,9 +51,6 @@ Sem predefinição, um popup pedirá **Áreas** e **Dificuldades** (selecione pe
 - Ao parar, a área sorteada é destacada e a pergunta correspondente é aberta.
 - **Casas especiais** **+5**/**–5** aplicam bônus/penalidade imediata e pulam a vez.
 
-<div align="center">
-  <img src="docs/wheel.png" alt="Roda: clique para girar" width="90%"/>
-</div>
 
 ## 5) Respondendo à pergunta
 - Um popup exibe **cronômetro**, enunciado e **4 alternativas**. O botão **Dica** pode estar disponível.
@@ -61,9 +58,6 @@ Sem predefinição, um popup pedirá **Áreas** e **Dificuldades** (selecione pe
 - **Erro/Tempo zerado:** toca som de erro e passa a vez.
 - O **placar** é atualizado; a **equipe da vez** alterna automaticamente.
 
-<div align="center">
-  <img src="docs/question.png" alt="Popup de pergunta com alternativas" width="90%"/>
-</div>
 
 ## 6) Encerrar e salvar
 Use **Encerrar Jogo** para finalizar. O app calcula a(s) equipe(s) vencedora(s), registra a sessão e volta para a introdução.
