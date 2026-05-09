@@ -1,0 +1,42 @@
+{
+    "btn_voltar": [
+        10.0,
+        10.0
+    ],
+    "btn_salvar_pos": [
+        100.0,
+        10.0
+    ],
+    "btn_fake1": [
+        0,
+        0
+    ],
+    "btn_fake2": [
+        0,
+        0
+    ],
+    "btn_fake3": [
+        142.0,
+        110.0
+    ],
+    "btn_fake4": [
+        190.0,
+        72.00000000000001
+    ],
+    "spinner_predefinicao": [
+        100.0,
+        400.0
+    ],
+    "spinner_game_mode": [
+        100.0,
+        340.0
+    ],
+    "spinner_areas": [
+        100.0,
+        280.0
+    ],
+    "spinner_dificuldade": [
+        661.0,
+        584.0
+    ]
+}

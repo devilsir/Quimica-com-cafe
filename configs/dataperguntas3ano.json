@@ -1,0 +1,911 @@
+{
+  "areas": {
+    "Química Orgânica": [
+      0.8,
+      0.4,
+      0.4,
+      1
+    ],
+    "+5 pontos 1": [
+      0.5,
+      0.5,
+      0.5,
+      1
+    ],
+    "Química Ambiental": [
+      0.4,
+      0.8,
+      0.6,
+      1
+    ],
+    "-5 pontos 1": [
+      0.5,
+      0.5,
+      0.5,
+      1
+    ],
+    "Bioquímica": [
+      0.6,
+      0.8,
+      0.4,
+      1
+    ],
+    "+5 pontos 2": [
+      0.5,
+      0.5,
+      0.5,
+      1
+    ],
+    "Química Inorgânica": [
+      0.6,
+      0.4,
+      0.8,
+      1
+    ],
+    "-5 pontos 2": [
+      0.5,
+      0.5,
+      0.5,
+      1
+    ],
+    "Físico-Química": [
+      0.4,
+      0.6,
+      0.8,
+      1
+    ],
+    "Química Analítica": [
+      0.4,
+      0.8,
+      0.6,
+      1
+    ]
+  },
+  "dificuldades": [
+    "Fácil",
+    "Médio",
+    "Difícil"
+  ],
+  "perguntas": [
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Qual classe de compostos orgânicos ajuda a formar o aroma 'floral/frutado' em alguns cafés especiais?",
+      "alternativas": [
+        "Ésteres",
+        "Óxidos metálicos",
+        "Hidretos",
+        "Carbetos"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Ésteres costumam ter cheiros frutados.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "A sacarose presente no grão cru, ao aquecer, sofre principalmente:",
+      "alternativas": [
+        "Caramelização e reações de Maillard (após degradação)",
+        "Fusão nuclear",
+        "Formação de íons metálicos",
+        "Saponificação com água fria"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Sacarose aquece → degrada/carameliza e alimenta Maillard indiretamente.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Qual composto abaixo é um exemplo de aldeído associado a aroma em alimentos torrados (incluindo café)?",
+      "alternativas": [
+        "Vanilina",
+        "Cloreto de potássio",
+        "Hélio",
+        "Carbonato de sódio"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Vanilina é um aldeído aromático (cheiro de baunilha).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "A cafeína é classificada quimicamente como:",
+      "alternativas": [
+        "Uma metilxantina (heterociclo nitrogenado)",
+        "Um sal iônico",
+        "Um polímero sintético",
+        "Um metal de transição"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Metilxantinas são alcaloides com anéis contendo nitrogênio.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Qual opção descreve melhor a diferença entre 'ácidos' e 'ésteres' nos compostos do café?",
+      "alternativas": [
+        "Ácidos têm H ionizável; ésteres são derivados de ácido + álcool",
+        "Ésteres sempre são mais ácidos que ácidos",
+        "Ácidos só existem em sólidos",
+        "Ésteres são sempre sais"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Ácido carboxílico vs éster (derivado).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Em descafeinação, por que um pré‑umedecimento do grão é útil?",
+      "alternativas": [
+        "Ajuda a abrir poros e facilitar a difusão da cafeína",
+        "Transforma cafeína em ferro",
+        "Congela os lipídios",
+        "Elimina água do grão"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Umidade aumenta mobilidade/difusão e acessibilidade interna.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Qual composto é um 'antioxidante' comum em café e está ligado a fenóis?",
+      "alternativas": [
+        "Ácido cafeico",
+        "Metano",
+        "Cloreto de cobre",
+        "Hidróxido de cálcio"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Ácido cafeico é fenólico e pode atuar como antioxidante.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Um marcador químico de torra muito escura é o aumento de:",
+      "alternativas": [
+        "Compostos de pirólise e notas 'defumadas'",
+        "Glicose intacta",
+        "Vitaminas termolábeis",
+        "Hidróxido de amônio"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Torra alta → pirólise → compostos defumados.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "O termo 'aroma' em café está mais ligado a:",
+      "alternativas": [
+        "Compostos voláteis orgânicos",
+        "Íons inorgânicos fixos",
+        "Apenas corantes",
+        "Partículas metálicas"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Aroma = voláteis que chegam ao nariz.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Orgânica",
+      "pergunta": "Um exemplo de composto nitrogenado que pode surgir em torra e contribuir para notas torradas é:",
+      "alternativas": [
+        "Pirazinas",
+        "Nitrato de prata",
+        "Gesso",
+        "Quartzo"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Pirazinas são típicas de alimentos torrados e Maillard.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Açúcares e aminoácidos no grão, ao serem aquecidos, formam melanoidinas. Essas moléculas tendem a ser:",
+      "alternativas": [
+        "Macromoléculas (polímeros/condensados)",
+        "Gases nobres",
+        "Metais puros",
+        "Íons simples"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Melanoidinas são grandes e escurecem o alimento.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Qual processo pode reduzir o teor de cafeína no café DESCafeinado?",
+      "alternativas": [
+        "Extração seletiva antes da torra",
+        "Congelamento do grão",
+        "Adição de sal",
+        "Irradiação UV do líquido"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Descafeinação remove cafeína por extração antes/ durante processamento.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "A produção de CO₂ nos grãos recém torrados vem, em parte, de:",
+      "alternativas": [
+        "Decomposição térmica de compostos orgânicos",
+        "Eletrólise da água no grão",
+        "Fusão de carbonato de cálcio",
+        "Respiração de algas"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Torra gera gases por degradação térmica.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Qual é o papel das leveduras em algumas fermentações controladas do café?",
+      "alternativas": [
+        "Produzir metabólitos que influenciam aroma/sabor",
+        "Produzir ferro para o grão",
+        "Transformar cafeína em sal",
+        "Criar cloro gasoso"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Leveduras podem gerar ésteres e alcoóis que afetam perfil sensorial.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Em termos de macronutrientes, o café tem maior destaque (no grão) para:",
+      "alternativas": [
+        "Carboidratos e lipídios",
+        "DNA e RNA",
+        "Sais de urânio",
+        "Apenas proteínas puras"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Grãos têm carboidratos estruturais e óleos.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Um motivo para café 'envelhecido' perder aroma é:",
+      "alternativas": [
+        "Oxidação de compostos voláteis/lipídios",
+        "Aumento espontâneo de cafeína",
+        "Formação de ouro",
+        "Geração de glicose do nada"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Oxidação e evaporação reduzem voláteis.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Qual molécula é frequentemente usada como referência de 'amargor' no café?",
+      "alternativas": [
+        "Cafeína",
+        "Água",
+        "Amido",
+        "Cloreto de sódio"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Cafeína é o alcaloide mais conhecido no café.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Na fermentação, o termo 'mucilagem' se refere a uma camada rica em:",
+      "alternativas": [
+        "Pectinas e açúcares",
+        "Metais pesados",
+        "Vidro",
+        "Sais de chumbo"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "É uma camada pegajosa rica em polissacarídeos.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "O pH do café pode mudar com fermentação porque há produção de:",
+      "alternativas": [
+        "Ácidos orgânicos",
+        "Metais alcalinos",
+        "Gases nobres",
+        "DNA extra"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Ácidos orgânicos diminuem pH.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Bioquímica",
+      "pergunta": "Qual afirmação sobre cafeína é correta?",
+      "alternativas": [
+        "É um composto orgânico nitrogenado",
+        "É um mineral inorgânico",
+        "É um polímero de silicone",
+        "É um metal alcalino"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Cafeína contém nitrogênio e carbono.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Qual íon é importante para 'tamponar' a água e afetar percepção de acidez no café?",
+      "alternativas": [
+        "HCO₃⁻",
+        "NO₃⁻",
+        "I⁻",
+        "Br⁻"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Bicarbonato é o tampão mais citado em água de café.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Se a água tem muito ferro (Fe²⁺/Fe³⁺), um efeito comum é:",
+      "alternativas": [
+        "Sabor metálico e possível escurecimento",
+        "Aumentar doçura naturalmente",
+        "Eliminar acidez totalmente",
+        "Virar cafeína"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Íons metálicos podem dar gosto metálico e catalisar oxidações.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "A remoção de dureza por filtro de troca iônica funciona porque ele troca Ca²⁺/Mg²⁺ por:",
+      "alternativas": [
+        "Na⁺ ou H⁺",
+        "Cl⁻",
+        "CO₂",
+        "O₂"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Resinas trocam cátions da água por outros cátions do material.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Em um tampão bicarbonato, o par ácido/base conjugada é:",
+      "alternativas": [
+        "H₂CO₃ / HCO₃⁻",
+        "HCl / Cl⁻",
+        "NaOH / Na⁺",
+        "H₂O / O₂"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Ácido carbônico ↔ bicarbonato.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Qual composto inorgânico é um gás que pode ficar preso no grão recém torrado e escapar na 'degaseificação'?",
+      "alternativas": [
+        "CO₂",
+        "N₂O₅",
+        "NaCl",
+        "CaCO₃"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "CO₂ é gerado na torra e sai aos poucos.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Se você mede TDS (sólidos dissolvidos totais) da água, você está medindo principalmente:",
+      "alternativas": [
+        "Sais/minerais dissolvidos",
+        "Apenas cafeína",
+        "Apenas açúcar",
+        "Apenas óleo"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "TDS é proxy de minerais dissolvidos (entre outras coisas).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Água com muito sulfato (SO₄²⁻) tende a realçar:",
+      "alternativas": [
+        "Amargor/sequidão (em excesso)",
+        "Doçura intensa sempre",
+        "Aroma floral automático",
+        "Cor azul"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Sulfatos podem acentuar sensação seca/amarga em bebidas.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "Qual opção é um exemplo de sal 'do bem' em pequena quantidade na água do café, por contribuir com extração?",
+      "alternativas": [
+        "Magnésio (Mg²⁺)",
+        "Chumbo (Pb²⁺)",
+        "Mercúrio (Hg²⁺)",
+        "Cádmio (Cd²⁺)"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Mg²⁺ é desejável em níveis adequados; metais pesados não.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "O que acontece com CaCO₃ quando há aquecimento e perda de CO₂ em água dura?",
+      "alternativas": [
+        "Ele tende a precipitar (incrustação)",
+        "Ele vira açúcar",
+        "Ele evapora como gás",
+        "Ele vira NaCl"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Equilíbrio carbonato desloca e precipita carbonato.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Inorgânica",
+      "pergunta": "O principal tipo de ligação em sais como NaCl é:",
+      "alternativas": [
+        "Iônica",
+        "Metálica",
+        "Covalente apolar",
+        "Ponte de hidrogênio"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Sais iônicos = atração entre íons.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "A solubilidade de CO₂ na bebida é maior quando a pressão é:",
+      "alternativas": [
+        "Maior",
+        "Menor",
+        "Igual a zero",
+        "Negativa"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Gases dissolvem mais sob maior pressão (Henry).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "O 'bloom' no coado (aquela espuma) acontece porque:",
+      "alternativas": [
+        "CO₂ preso no pó sai quando molha",
+        "A água cria oxigênio do nada",
+        "O filtro libera cloro",
+        "A cafeína ferve"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Degaseificação: CO₂ sai e forma bolhas.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "Se você usa água muito fria no coado, tende a extrair:",
+      "alternativas": [
+        "Menos compostos e mais devagar",
+        "Mais compostos e mais rápido",
+        "O mesmo sempre",
+        "Apenas sal"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Menor temperatura reduz extração.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "A relação entre pressão e solubilidade de gases é descrita por:",
+      "alternativas": [
+        "Lei de Henry",
+        "Lei de Raoult",
+        "Lei de Hess",
+        "Lei de Lavoisier"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Henry: solubilidade ∝ pressão parcial do gás.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "O tempo de contato água‑pó no coado afeta:",
+      "alternativas": [
+        "O rendimento de extração (quanto dissolve)",
+        "A massa do copo",
+        "A cor do filtro apenas",
+        "A gravidade local"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Mais tempo → tende a dissolver mais (até saturar).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "A expressão 'subextração' costuma significar:",
+      "alternativas": [
+        "Pouca dissolução: bebida ácida/aguada",
+        "Excesso de dissolução: amarga/adstringente",
+        "Bebida sempre doce",
+        "Água sem minerais"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Subextração geralmente puxa ácidos primeiro e falta doçura/corpo.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "Uma forma prática de estimar concentração de sólidos no café é medir:",
+      "alternativas": [
+        "TDS por refratômetro",
+        "Altura do copo",
+        "Temperatura da mesa",
+        "Cor do filtro"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Refratômetro mede TDS (sólidos dissolvidos).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "Canalização (channeling) no espresso acontece quando:",
+      "alternativas": [
+        "A água encontra caminhos preferenciais e ignora parte do pó",
+        "O pó vira líquido",
+        "A pressão some por magia",
+        "O filtro vira sal"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Fluxo não uniforme → extração desigual.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "Em geral, aumentar a moagem (mais grossa) tende a:",
+      "alternativas": [
+        "Diminuir extração (se tempo não aumentar)",
+        "Aumentar extração sempre",
+        "Não mudar nada",
+        "Eliminar acidez"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Menor área e menor resistência mudam taxa/tempo.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Físico-Química",
+      "pergunta": "Uma emulsão (como óleos no café) é:",
+      "alternativas": [
+        "Dispersão de gotículas de um líquido em outro",
+        "Mistura de dois sólidos",
+        "Gás em gás",
+        "Substância pura"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Óleo em água = emulsão.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Se você filtra o café e mede sólidos totais por secagem, você está usando:",
+      "alternativas": [
+        "Gravimetria",
+        "Volumetria redox",
+        "Potenciometria",
+        "Termometria"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Gravimetria: medir massa após remoção de solvente.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Um método prático para comparar partículas de moagem é:",
+      "alternativas": [
+        "Análise granulométrica por peneiras",
+        "Titulação",
+        "HPLC",
+        "pHmetro"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Peneiramento separa faixas de tamanho.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Condutivímetro em água mede principalmente:",
+      "alternativas": [
+        "Íons dissolvidos (condutividade)",
+        "Cafeína total",
+        "Óleo total",
+        "Aroma volátil"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Condutividade vem de íons.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Se você usa um padrão interno em cromatografia, o objetivo é:",
+      "alternativas": [
+        "Corrigir variações de injeção/detecção",
+        "Aumentar a pressão do espresso",
+        "Mudar o pH do café",
+        "Criar espuma"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Padrão interno normaliza variações instrumentais.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Um teste de pesticidas em café verde costuma exigir:",
+      "alternativas": [
+        "Técnicas sensíveis como LC‑MS/MS",
+        "Decantação",
+        "Peneiração",
+        "Coloração com papel"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Resíduos em baixos níveis → LC‑MS/MS.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Qual técnica mede compostos voláteis do aroma com alta resolução?",
+      "alternativas": [
+        "Cromatografia gasosa (GC)",
+        "Filtração",
+        "Titulação",
+        "Densimetria"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "GC separa voláteis.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Se a bebida está turva por partículas suspensas, um modo simples de reduzir isso é:",
+      "alternativas": [
+        "Filtração",
+        "Eletrólise",
+        "Sublimação",
+        "Fotólise"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Filtro remove partículas.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "O termo 'limite de detecção' se refere a:",
+      "alternativas": [
+        "Menor quantidade detectável acima do ruído",
+        "Maior concentração possível",
+        "Tempo de torra mínimo",
+        "Pressão máxima do espresso"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "LOD = sinal mínimo distinguível do ruído.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Quando você compara dois métodos e busca precisão, você olha principalmente:",
+      "alternativas": [
+        "Repetibilidade/variância dos resultados",
+        "Cor do copo",
+        "Marca do filtro",
+        "Altura do barista"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Precisão = quão espalhados são os resultados.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Analítica",
+      "pergunta": "Para medir massa de café com maior exatidão, você usa:",
+      "alternativas": [
+        "Balança analítica/precisa",
+        "pHmetro",
+        "Termômetro",
+        "Condutivímetro"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Balança controla massa (dose).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "O termo DQO (demanda química de oxigênio) está relacionado a:",
+      "alternativas": [
+        "Oxidabilidade total da matéria no efluente",
+        "Quantidade de cafeína por xícara",
+        "Pressão do espresso",
+        "Cor do grão"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "DQO mede oxidável quimicamente (proxy de carga).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Quando você reutiliza borra como substrato para cogumelos, isso é um exemplo de:",
+      "alternativas": [
+        "Economia circular",
+        "Mineração",
+        "Fissão nuclear",
+        "Eutrofização"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Transforma resíduo em insumo.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Uma boa prática para evitar contaminação do solo por descarte de óleo de café é:",
+      "alternativas": [
+        "Coletar e descartar corretamente/reciclar óleo",
+        "Jogar no ralo",
+        "Misturar com terra em qualquer lugar",
+        "Queimar dentro de casa"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Óleos podem entupir e contaminar; coleta adequada ajuda.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Para reduzir microplásticos, uma escolha melhor é:",
+      "alternativas": [
+        "Usar materiais reutilizáveis (ex.: filtros permanentes bem cuidados)",
+        "Comprar cápsulas descartáveis sempre",
+        "Jogar filtro no rio",
+        "Queimar filtro no fogão"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "Reutilizáveis reduzem resíduos (com higiene).",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Se você detectar resíduos de pesticidas no café, isso é um problema de:",
+      "alternativas": [
+        "Química ambiental e segurança alimentar",
+        "Astronomia",
+        "Geometria",
+        "Acústica"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Impacto ambiental e saúde.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Quando a borra é usada para produzir biocarvão (biochar), a ideia é:",
+      "alternativas": [
+        "Estocar carbono e melhorar solo",
+        "Criar mais CO₂ na atmosfera",
+        "Aumentar corrosão",
+        "Fazer o café ferver sozinho"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Biochar pode sequestrar carbono e melhorar propriedades do solo.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Eutrofização em corpos d’água está ligada ao excesso de:",
+      "alternativas": [
+        "Nutrientes (N e P)",
+        "Gases nobres",
+        "Metais puros",
+        "Açúcar refinado"
+      ],
+      "correta": 0,
+      "dificuldade": "médio",
+      "dica_texto": "N e P estimulam crescimento de algas.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Um efeito ambiental positivo de comprar café de origem certificada pode ser:",
+      "alternativas": [
+        "Incentivo a práticas agrícolas sustentáveis",
+        "Aumento obrigatório de agrotóxicos",
+        "Queima de florestas",
+        "Descarte ilegal"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Certificações podem incentivar práticas melhores.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Se a torrefação usa queima ineficiente, pode aumentar emissão de:",
+      "alternativas": [
+        "Material particulado e CO",
+        "H₂O destilada",
+        "Cloro gasoso sempre",
+        "Hélio"
+      ],
+      "correta": 0,
+      "dificuldade": "difícil",
+      "dica_texto": "Combustão incompleta → CO e partículas.",
+      "dica_imagem": "roda.png"
+    },
+    {
+      "area": "Química Ambiental",
+      "pergunta": "Uma forma de reduzir desperdício no preparo é ajustar receita para evitar descartar café em excesso. Isso se relaciona a:",
+      "alternativas": [
+        "Consumo consciente de recursos",
+        "Aumento de DBO do ar",
+        "Formação de metais no copo",
+        "Neutralização do oceano"
+      ],
+      "correta": 0,
+      "dificuldade": "fácil",
+      "dica_texto": "Menos desperdício = menos recursos e resíduos.",
+      "dica_imagem": "roda.png"
+    }
+  ]
+}

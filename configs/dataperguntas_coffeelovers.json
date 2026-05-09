@@ -1,0 +1,1374 @@
+{
+  "areas": {
+    "Química do Café": [
+      1,
+      0.8,
+      0.5,
+      1
+    ],
+    "Processos de Torra": [
+      1,
+      0.8,
+      0.5,
+      1
+    ],
+    "Compostos Aromáticos": [
+      1,
+      0.8,
+      0.5,
+      1
+    ],
+    "Química Sensorial": [
+      1,
+      0.8,
+      0.5,
+      1
+    ],
+    "Geral": [
+      0.9,
+      0.98,
+      0.88,
+      1.0
+    ],
+    "Extração e Métodos": [
+      1,
+      0.8,
+      0.5,
+      1
+    ]
+  },
+  "dificuldades": [
+    "Fácil",
+    "Médio",
+    "Difícil"
+  ],
+  "perguntas": [
+    {
+      "area": "Química do Café",
+      "pergunta": "Qual é o principal alcaloide do café associado ao efeito estimulante?",
+      "alternativas": [
+        "Cafeína",
+        "Sacarose",
+        "Cloreto de sódio",
+        "Celulose"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "É uma metilxantina.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "Um composto muito citado no café verde, ligado a acidez e amargor, é:",
+      "alternativas": [
+        "Ácido clorogênico",
+        "Ácido sulfúrico",
+        "Hidróxido de sódio",
+        "Metano"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "É um éster fenólico.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "Qual componente do grão contribui para corpo e textura por formar emulsões?",
+      "alternativas": [
+        "Lipídios (óleos)",
+        "Gases nobres",
+        "Areia",
+        "Sais de chumbo"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Óleo em água → emulsão.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "A 'degaseificação' após a torra envolve principalmente a liberação de:",
+      "alternativas": [
+        "CO₂",
+        "H₂",
+        "He",
+        "O₃"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "CO₂ se forma durante a torra.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "A trigonelina, ao degradar na torra, pode contribuir para notas e formar:",
+      "alternativas": [
+        "Niacina (vitamina B3) e voláteis",
+        "Uranium",
+        "Gelo seco",
+        "Sal de cozinha"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Trigonelina pode gerar niacina e aromáticos.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "O pH típico do café preparado é melhor descrito como:",
+      "alternativas": [
+        "Levemente ácido",
+        "Base forte",
+        "Neutro sempre",
+        "Ácido forte (pH 1)"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Em geral fica por volta de 4–6.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "A cremosidade do espresso é favorecida por compostos que atuam como:",
+      "alternativas": [
+        "Tensoativos naturais",
+        "Metais pesados",
+        "Gases nobres",
+        "Cristais de sal"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Peptídeos e lipídios ajudam a estabilizar espuma.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "Um motivo para café velho perder aroma é a:",
+      "alternativas": [
+        "Oxidação de compostos voláteis e lipídios",
+        "Geração espontânea de cafeína",
+        "Formação de ouro",
+        "Fissão nuclear"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Oxidação + volatilização = aroma some.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "A doçura percebida aumenta quando a extração inclui mais compostos de:",
+      "alternativas": [
+        "Caramelização/Maillard (melanoidinas e derivados)",
+        "Metais",
+        "Ácidos fortes",
+        "Cloro gasoso"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Torra gera compostos que lembram caramelo.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química do Café",
+      "pergunta": "Descafeinação industrial normalmente acontece:",
+      "alternativas": [
+        "Antes da torra, removendo cafeína do grão verde",
+        "Após servir a xícara",
+        "Somente com sal",
+        "Somente com congelamento"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Remove cafeína do grão cru por extração.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT105",
+          "EM13CNT106"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "A reação de Maillard na torra ocorre entre:",
+      "alternativas": [
+        "Aminoácidos e açúcares redutores",
+        "Água e NaCl",
+        "O₂ e N₂",
+        "Areia e ferro"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Mesma reação que doura pão e carne.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "O escurecimento do grão durante a torra está ligado à formação de:",
+      "alternativas": [
+        "Melanoidinas",
+        "Gelo",
+        "Quartzo",
+        "Cloreto de prata"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "São polímeros/condensados escuros.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "Uma torra muito escura aumenta a chance de sabores:",
+      "alternativas": [
+        "Defumados/amargos por pirólise",
+        "Florais delicados",
+        "Salgados sempre",
+        "Sem gosto nenhum"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Pirólise gera notas de fumaça.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "Qual etapa é conhecida por 'first crack'?",
+      "alternativas": [
+        "Estalo por expansão e liberação de vapor/gases",
+        "Congelamento do grão",
+        "Entrada de água no grão",
+        "Formação de calcário"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "É um evento físico durante a torra.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "Por que grãos recém torrados precisam 'descansar'?",
+      "alternativas": [
+        "Para liberar CO₂ e estabilizar extração",
+        "Para ganhar cafeína",
+        "Para virar ácido forte",
+        "Para ficar mais pesado"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "CO₂ atrapalha extração e crema em excesso.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "A caramelização está mais relacionada a:",
+      "alternativas": [
+        "Degradação térmica de açúcares",
+        "Reação de sais com água",
+        "Fusão de metais",
+        "Ionização de gases nobres"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Açúcar aquece → compostos caramelados.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "Em geral, aumentar o tempo/energia de torra tende a reduzir:",
+      "alternativas": [
+        "Acidez percebida",
+        "Temperatura do ar",
+        "A cor escura",
+        "O aroma torrado"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Torra mais alta costuma “matar” acidez.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "Um composto indesejado que pode aumentar com torra alta (em alguns casos) é:",
+      "alternativas": [
+        "Acrilamida",
+        "Sacarose intacta",
+        "Água destilada",
+        "Oxigênio puro"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Pode se formar em aquecimento de certos alimentos.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "O controle de torra busca equilibrar:",
+      "alternativas": [
+        "Reações químicas e transferência de calor",
+        "Somente cor do grão",
+        "Somente volume do pacote",
+        "Somente a música do ambiente"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Termodinâmica + química andando juntas.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Processos de Torra",
+      "pergunta": "A perda de massa do grão na torra acontece principalmente por:",
+      "alternativas": [
+        "Perda de água e voláteis + decomposição de orgânicos",
+        "Formação de metais",
+        "Geração de NaCl",
+        "Entrada de areia"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Sobe temperatura → água/voláteis saem e há degradação.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "Compostos que frequentemente trazem aroma frutado/floral são:",
+      "alternativas": [
+        "Ésteres",
+        "Silicatos",
+        "Nitratos",
+        "Hidretos metálicos"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Éster = cheiro frutado clássico.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "Notas de nozes/torrado costumam envolver:",
+      "alternativas": [
+        "Pirazinas",
+        "Gases nobres",
+        "Carbonatos metálicos",
+        "Sais de chumbo"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Pirazinas são típicas de Maillard.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "O furfural é associado a notas de:",
+      "alternativas": [
+        "Caramelo/amêndoas",
+        "Cloro",
+        "Metal",
+        "Gelo"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "É um furano gerado de açúcares aquecidos.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "Vanilina é um exemplo de:",
+      "alternativas": [
+        "Aldeído aromático",
+        "Sal iônico",
+        "Metal alcalino",
+        "Polímero de silicone"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Aldeído com cheiro de baunilha.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "Compostos voláteis são importantes porque:",
+      "alternativas": [
+        "Evaporam e chegam ao olfato",
+        "Viraram sal no copo",
+        "Não interagem com o corpo",
+        "Só existem em sólidos"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Aroma é nariz + voláteis.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "Em torra, compostos sulfurados em baixas concentrações podem contribuir para:",
+      "alternativas": [
+        "Complexidade aromática",
+        "Neutralidade total",
+        "Sabor doce obrigatório",
+        "Cor azul"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Traços de enxofre podem ser impactantes.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "A expressão 'nota cítrica' costuma estar ligada a:",
+      "alternativas": [
+        "Ésteres e certos aldeídos/ácidos em balanço",
+        "Sais de cálcio",
+        "Metais pesados",
+        "Areia"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Perfil cítrico envolve mistura de voláteis + acidez.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "Qual técnica separa voláteis do aroma com alta eficiência?",
+      "alternativas": [
+        "Cromatografia gasosa (GC)",
+        "Decantação",
+        "Peneiração",
+        "Filtração comum"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "GC é clássica para voláteis.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "A oxidação de lipídios do café pode gerar:",
+      "alternativas": [
+        "Aldeídos rançosos (off-flavors)",
+        "Mais cafeína",
+        "Mais açúcar",
+        "Menos CO₂ automaticamente"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Rancidez = oxidação de gordura → aldeídos/ácidos.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Compostos Aromáticos",
+      "pergunta": "A principal diferença entre 'aroma' e 'sabor' é que aroma envolve:",
+      "alternativas": [
+        "Olfato (retronasal) + compostos voláteis",
+        "Apenas pH",
+        "Apenas cor",
+        "Apenas temperatura"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Grande parte do 'sabor' é cheiro retronasal.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT101",
+          "EM13CNT104",
+          "EM13CNT105"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "No café, 'acidez' sensorial é mais parecida com a sensação de:",
+      "alternativas": [
+        "Frutas cítricas",
+        "Sal de cozinha",
+        "Pimenta ardida",
+        "Água sem gosto"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "É uma vivacidade, não pH de ácido forte.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "A adstringência (sensação de boca 'seca') se relaciona a:",
+      "alternativas": [
+        "Interação de polifenóis com proteínas da saliva",
+        "Aumento de açúcar",
+        "Formação de gás hélio",
+        "Presença de ouro"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Polifenóis podem precipitar proteínas/saliva.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "O amargor é geralmente intensificado por:",
+      "alternativas": [
+        "Extração excessiva ou torra muito escura",
+        "Água mais fria sempre",
+        "Moagem mais grossa sempre",
+        "Menos tempo sempre"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Over-extraction + torra alta = amargor.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "Qual fator sensorial costuma aumentar a percepção de 'corpo'?",
+      "alternativas": [
+        "Mais óleos e sólidos dissolvidos/suspensos",
+        "Menos sólidos e menos óleo",
+        "pH 14",
+        "Ausência total de minerais"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "TDS + emulsão influenciam corpo.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "'Doçura' no café pode aparecer quando há equilíbrio e boa extração de:",
+      "alternativas": [
+        "Compostos caramelizados e certos ácidos em balanço",
+        "Somente sal",
+        "Somente cafeína",
+        "Somente CO₂"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Doçura é percepção: química + equilíbrio.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "Por que café muito quente parece menos doce?",
+      "alternativas": [
+        "Temperatura alta reduz percepção de certos sabores",
+        "Açúcar evapora do líquido",
+        "Cafeína some",
+        "A água vira apolar"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Sensação muda com temperatura.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "O termo 'retrogosto' (aftertaste) se refere a:",
+      "alternativas": [
+        "Sabor/aroma que permanece após engolir",
+        "Cor do grão",
+        "Massa do copo",
+        "Quantidade de espuma"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Persistência sensorial.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "Um café 'limpo' sensorialmente costuma indicar:",
+      "alternativas": [
+        "Poucas notas defeituosas e boa clareza aromática",
+        "Muito calcário na água",
+        "Muito cloreto",
+        "Torra queimada"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Clareza = menos interferência/defeito.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "A percepção do aroma acontece muito via:",
+      "alternativas": [
+        "Olfação retronasal",
+        "Apenas língua",
+        "Apenas pele",
+        "Apenas audição"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Nariz manda muito no 'sabor'.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Química Sensorial",
+      "pergunta": "Para avaliação sensorial, o 'cupper' busca padronizar:",
+      "alternativas": [
+        "Moagem, proporção, tempo e temperatura",
+        "Somente a xícara",
+        "Somente a cor do grão",
+        "Somente a música do local"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Padronização reduz variáveis.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT105",
+          "EM13CNT106",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "No espresso, a extração é acelerada principalmente por:",
+      "alternativas": [
+        "Pressão e moagem fina",
+        "Vácuo total",
+        "Gelo",
+        "Sal"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Pressão alta atravessa o leito compacto.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Moagem mais fina tende a:",
+      "alternativas": [
+        "Aumentar a área de contato e acelerar dissolução",
+        "Diminuir área de contato",
+        "Tornar água apolar",
+        "Zerar extração"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Área superficial ↑.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "O 'bloom' no coado acontece porque:",
+      "alternativas": [
+        "CO₂ preso no pó é liberado ao molhar",
+        "A água cria O₂ do nada",
+        "O filtro libera cloro",
+        "A cafeína ferve"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Degaseificação.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Cold brew tende a extrair de forma diferente porque usa:",
+      "alternativas": [
+        "Baixa temperatura e tempo longo",
+        "Alta pressão e tempo curto",
+        "Vácuo total",
+        "Radiação UV"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Cinética muda com temperatura.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Channeling no espresso é quando:",
+      "alternativas": [
+        "A água cria caminhos preferenciais e extrai desigual",
+        "O café vira sólido",
+        "A pressão some",
+        "O filtro derrete"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Fluxo não uniforme = extração desigual.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Pré-infusão ajuda porque:",
+      "alternativas": [
+        "Molha o leito e reduz zonas secas antes da pressão máxima",
+        "Aumenta cafeína",
+        "Gera calcário",
+        "Evapora água"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Uniformidade de fluxo.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "French press costuma gerar bebida mais 'encorpada' porque:",
+      "alternativas": [
+        "Retém mais óleos e partículas finas (menos filtragem)",
+        "Elimina óleos totalmente",
+        "Tem pressão igual ao espresso",
+        "Sempre usa água fria"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Menos filtro → mais emulsão/partículas.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Uma forma de controlar rendimento de extração é medir:",
+      "alternativas": [
+        "TDS com refratômetro e massa de bebida",
+        "Somente a cor do copo",
+        "Somente o cheiro do grão",
+        "Somente o som do moedor"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "TDS + massa → estimar extração.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Se a bebida sai muito ácida e aguada (subextraída), uma correção comum é:",
+      "alternativas": [
+        "Aumentar tempo/temperatura ou moer mais fino",
+        "Diminuir temperatura e tempo",
+        "Adicionar sal sempre",
+        "Congelar a bebida"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Mais extração puxa doçura/corpo.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Extração e Métodos",
+      "pergunta": "Se a bebida sai amarga e adstringente (superextraída), uma correção comum é:",
+      "alternativas": [
+        "Diminuir tempo/temperatura ou moer mais grosso",
+        "Moer ainda mais fino",
+        "Aumentar tempo infinito",
+        "Adicionar bicarbonato sem medida"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Menos extração reduz amargor/adstringência.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT301",
+          "EM13CNT303",
+          "EM13CNT102"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "A dureza da água influencia extração principalmente por causa de íons como:",
+      "alternativas": [
+        "Ca²⁺ e Mg²⁺",
+        "He e Ne",
+        "Au³⁺",
+        "Cl₂ gasoso"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Minerais mudam extração e equilíbrio.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "O 'calcário' em máquinas é geralmente:",
+      "alternativas": [
+        "Carbonato de cálcio (CaCO₃)",
+        "Sacarose",
+        "Cafeína pura",
+        "Ferro metálico"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Incrustação típica de água dura.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Para conservar aroma, o melhor é guardar café:",
+      "alternativas": [
+        "Bem fechado, longe de luz/calor/oxigênio",
+        "Aberto na bancada",
+        "Misturado com água",
+        "No sol"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Oxidação e volatilização são inimigas.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Por que moer na hora melhora o café?",
+      "alternativas": [
+        "Aumenta voláteis disponíveis antes de oxidarem/evaporarem",
+        "Cria mais cafeína",
+        "Neutraliza acidez",
+        "Elimina óleo"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Moagem expõe área e voláteis somem rápido.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Uma boa prática ambiental com borra é:",
+      "alternativas": [
+        "Compostar/reaproveitar",
+        "Jogar no ralo",
+        "Queimar plástico junto",
+        "Descartar em rios"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Matéria orgânica pode virar composto.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Se o efluente do processamento tem alta carga orgânica, um risco ambiental é:",
+      "alternativas": [
+        "Reduzir oxigênio dissolvido em rios (DBO alta)",
+        "Aumentar ozônio no solo",
+        "Criar diamantes",
+        "Congelar água"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Microrganismos consomem O₂ para degradar matéria orgânica.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Uma técnica comum para medir cafeína com alta sensibilidade é:",
+      "alternativas": [
+        "HPLC (cromatografia líquida)",
+        "Peneiração",
+        "Decantação",
+        "Filtração simples"
+      ],
+      "correta": 0,
+      "dificuldade": "Difícil",
+      "dica_texto": "Separa e quantifica com detector.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Café descafeinado ainda pode ter:",
+      "alternativas": [
+        "Um pouco de cafeína residual",
+        "Zero moléculas orgânicas",
+        "Apenas sal",
+        "Somente água"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Processos não removem 100%.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "A maior parte do 'sabor' percebido vem do:",
+      "alternativas": [
+        "Aroma (olfato retronasal)",
+        "Somente língua",
+        "Somente visão",
+        "Somente audição"
+      ],
+      "correta": 0,
+      "dificuldade": "Fácil",
+      "dica_texto": "Nariz manda no jogo.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    },
+    {
+      "area": "Geral",
+      "pergunta": "Uma ação que reduz lixo é preferir:",
+      "alternativas": [
+        "Métodos reutilizáveis (ex.: coador permanente) quando fizer sentido",
+        "Descartar cápsulas sempre",
+        "Usar 2 copos por bebida",
+        "Jogar filtro no chão"
+      ],
+      "correta": 0,
+      "dificuldade": "Médio",
+      "dica_texto": "Reutilizáveis reduzem resíduos.",
+      "bncc": {
+        "componente": "Ciências da Natureza (Química)",
+        "habilidades": [
+          "EM13CNT201",
+          "EM13CNT202",
+          "EM13CNT303"
+        ]
+      },
+      "dica_imagem": ""
+    }
+  ],
+  "_metadata": {
+    "tema": "Coffee Lovers",
+    "serie": "Especial Temático",
+    "gerado_em": "2026-01-07T22:10:18-03:00",
+    "bncc_area": "Ciências da Natureza e suas Tecnologias (EM)",
+    "observacoes": "Banco Coffee Lovers atualizado: 6 áreas (mínimo), 10 questões por área, 100% contextualizado com café."
+  }
+}

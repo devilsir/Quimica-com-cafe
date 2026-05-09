@@ -1,0 +1,46 @@
+{
+    "btn_iniciar": [
+        761.0000000000001,
+        275.0
+    ],
+    "btn_adicionar": [
+        335.0,
+        275.0
+    ],
+    "btn_listar": [
+        761.0,
+        175.0
+    ],
+    "btn_voltar": [
+        99.0,
+        586.0
+    ],
+    "spinner_game_mode": [
+        871.9999999999999,
+        415.0
+    ],
+    "spinner_equipes": [
+        870.9999999999999,
+        625.0
+    ],
+    "spinner_tempo": [
+        870.9999999999999,
+        520.0
+    ],
+    "btn_predefinicoes": [
+        335.0,
+        175.0
+    ],
+    "spinner_predefinicao": [
+        50.0,
+        50.0
+    ],
+    "btn_volume": [
+        1200.0,
+        600.0
+    ],
+    "btn_historico": [
+        1050.0,
+        45.0
+    ]
+}
