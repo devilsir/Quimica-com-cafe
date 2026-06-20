@@ -15,7 +15,12 @@ from kivy.uix.image import Image
 from kivy.app import App
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.clock import Clock
 from kivy.properties import BooleanProperty, StringProperty
+try:
+    from kivy.core.video import Video as CoreVideoProvider
+except Exception:
+    CoreVideoProvider = None
 
 
 def resource_path_full(relative_path, subfolder=""):
@@ -35,6 +40,41 @@ if getattr(sys, 'frozen', False):
     base_path = os.path.dirname(sys.executable)
 else:
     base_path = os.path.abspath(os.path.dirname(__file__))
+
+LARGURA_ORIGINAL = 1366
+ALTURA_ORIGINAL = 705
+
+def calcular_viewport():
+    largura = Window.width or LARGURA_ORIGINAL
+    altura = Window.height or ALTURA_ORIGINAL
+    if largura < 200 or altura < 200:
+        largura, altura = LARGURA_ORIGINAL, ALTURA_ORIGINAL
+
+    aspect_original = LARGURA_ORIGINAL / ALTURA_ORIGINAL
+    aspect_tela = largura / altura
+    if aspect_tela > aspect_original:
+        altura_viewport = altura
+        largura_viewport = altura * aspect_original
+    else:
+        largura_viewport = largura
+        altura_viewport = largura / aspect_original
+    offset_x = (largura - largura_viewport) / 2
+    offset_y = (altura - altura_viewport) / 2
+    return largura_viewport, altura_viewport, offset_x, offset_y
+
+def ajustar_posicao_letterbox(posicao_salva):
+    largura_viewport, altura_viewport, offset_x, offset_y = calcular_viewport()
+    return [
+        posicao_salva[0] * (largura_viewport / LARGURA_ORIGINAL) + offset_x,
+        posicao_salva[1] * (altura_viewport / ALTURA_ORIGINAL) + offset_y,
+    ]
+
+def normalizar_posicao(pos):
+    largura_viewport, altura_viewport, offset_x, offset_y = calcular_viewport()
+    return [
+        (pos[0] - offset_x) * (LARGURA_ORIGINAL / largura_viewport),
+        (pos[1] - offset_y) * (ALTURA_ORIGINAL / altura_viewport),
+    ]
 
 class DraggableSpinner(DragBehavior, Spinner):
     pass
@@ -129,10 +169,10 @@ class ConfigMenu(BoxLayout):
         tela.ids.spinner_game_mode.text = self.ids.spinner_mode.text
         tela.ids.spinner_equipes.text = self.ids.spinner_eq.text
         tela.ids.spinner_tempo.text = self.ids.spinner_tm.text
-        if hasattr(tela, 'iniciar_jogo'):
-            tela.iniciar_jogo()
         if self.popup_ref:
             self.popup_ref.dismiss()
+        if hasattr(tela, 'iniciar_jogo'):
+            Clock.schedule_once(lambda dt: tela.iniciar_jogo(), 0)
 
     def cancelar(self):
         if self.popup_ref:
@@ -174,43 +214,79 @@ class HoverDraggableImageTextButton(DragBehavior, ButtonBehavior, RelativeLayout
         self.add_widget(self.image)
         self.add_widget(self.label)
 
+        # Quando o popup abre em cima do cursor, o Kivy pode aplicar hover/down
+        # no botão novo sem um clique real. Este lock só libera hover depois
+        # que o mouse sair da área inicial do botão.
+        self._hover_locked_until_exit = False
+        self._ignore_initial_touch = True
         Window.bind(mouse_pos=self.on_mouse_pos)
         self.update_sources()
+        Clock.schedule_once(self.reset_visual_state, 0)
+        Clock.schedule_once(self._prime_hover_lock, 0.02)
 
     def on_kv_post(self, base_widget):
         self.update_sources()
+        Clock.schedule_once(self.reset_visual_state, 0)
+        Clock.schedule_once(self._prime_hover_lock, 0.02)
 
     def update_sources(self):
         self.source_normal = self.source or self.source_normal
-        self.source_hover = self._add_suffix(self.source_normal, '_hover')
-        self.source_down = self._add_suffix(self.source_normal, '_hover')
+        if not self.source_hover:
+            self.source_hover = self._add_suffix(self.source_normal, '_hover')
+        if not self.source_down:
+            self.source_down = self.source_hover
         self.image.source = self.source_normal
         self.label.text = self.text
+
+    def _mouse_inside(self, pos=None):
+        if not self.get_root_window():
+            return False
+        pos = pos or Window.mouse_pos
+        return self.collide_point(*self.to_widget(*pos))
+
+    def _prime_hover_lock(self, *args):
+        self._hover_locked_until_exit = self._mouse_inside()
+        self._ignore_initial_touch = self._hover_locked_until_exit
+        self.image.source = self.source_normal
+
+    def reset_visual_state(self, *args):
+        self.state = 'normal'
+        self.image.source = self.source_normal
+        Clock.schedule_once(self._prime_hover_lock, 0)
 
     def _add_suffix(self, filename, suffix):
         name, ext = os.path.splitext(filename)
         return f"{name}{suffix}{ext}" if ext.lower() in ['.png', '.jpg', '.jpeg', '.webp'] else filename
 
     def on_mouse_pos(self, window, pos):
+        # Botões de texto do popup não usam brilho por hover.
+        # O glow só aparece durante o clique real.
         if not self.get_root_window():
             return
-        inside = self.collide_point(*self.to_widget(*pos))
-        if inside and os.path.exists(self.source_hover):
-            self.image.source = self.source_hover
-        else:
+
+        if self.state != 'down':
             self.image.source = self.source_normal
 
+        if self._hover_locked_until_exit and not self._mouse_inside(pos):
+            self._hover_locked_until_exit = False
+            self._ignore_initial_touch = False
+
+    def on_touch_down(self, touch):
+        # Ignora apenas o toque fantasma que pode vir junto com a abertura do popup.
+        if self._ignore_initial_touch and self._mouse_inside(touch.pos):
+            self.image.source = self.source_normal
+            return False
+        return super().on_touch_down(touch)
+
     def on_press(self):
+        self._hover_locked_until_exit = False
+        self._ignore_initial_touch = False
         if os.path.exists(self.source_down):
             self.image.source = self.source_down
 
     def on_release(self):
-        pos = Window.mouse_pos
-        if self.get_root_window() and self.collide_point(*self.to_widget(*pos)) and os.path.exists(self.source_hover):
-            self.image.source = self.source_hover
-        else:
-            self.image.source = self.source_normal
-
+        self.image.source = self.source_normal
+        self.state = 'normal'
 
 from kivy.factory import Factory
 Factory.register('HoverDraggableImageButton', cls=HoverDraggableImageButton)
@@ -324,8 +400,9 @@ Builder.load_string("""#:import resource_path_full introducao.resource_path_full
 
         Video:
             id: intro_video
-            source: root.video_source
-            state: 'play'
+            source: root.video_source if root.video_enabled else ''
+            state: 'play' if root.video_enabled else 'stop'
+            opacity: 1 if root.video_enabled else 0
             on_eos: root.on_video_end()
             allow_stretch: True
             keep_ratio: False
@@ -335,7 +412,7 @@ Builder.load_string("""#:import resource_path_full introducao.resource_path_full
         FloatLayout:
             id: main_content
             size_hint: 1, 1
-            opacity: 0
+            opacity: 0 if root.video_enabled else 1
 
             HoverDraggableImageButton:
                 id: btn_config
@@ -386,12 +463,14 @@ Builder.load_string("""#:import resource_path_full introducao.resource_path_full
 class TelaIntroducao(Screen):
     video_source = StringProperty('')
     bg_source = StringProperty('')
+    video_enabled = BooleanProperty(False)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         Window.set_icon(resource_path_full('icone.ico', 'assets'))
         self.video_source = self.resource_path_full('introdução.mp4', 'assets')
         self.bg_source = self.resource_path_full('introdução cartoon.jpg', 'assets')
+        self.video_enabled = bool(CoreVideoProvider and os.path.exists(self.video_source))
         Window.set_icon(resource_path_full('icone.ico', 'assets'))
 
     def salvar_todas_posicoes(self):
@@ -399,41 +478,52 @@ class TelaIntroducao(Screen):
         data = {}
         for btn_id in botoes:
             if btn_id in self.ids:
-                data[btn_id] = self.ids[btn_id].pos
+                data[btn_id] = normalizar_posicao(self.ids[btn_id].pos)
         path = resource_path_full('posicoes_botoes.json', 'configs')
-        with open(path, "w") as f:
-            json.dump(data, f)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
         print("[DEBUG] Todas as posições foram salvas manualmente.")
 
     def salvar_posicao_botao(self, btn_id, pos):
         path = resource_path_full('posicoes_botoes.json', 'configs')
         try:
-            with open(path, "r") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
         except FileNotFoundError:
             data = {}
-        data[btn_id] = pos
-        with open(path, "w") as f:
-            json.dump(data, f)
-        print(f"[DEBUG] JSON atualizado com {btn_id}: {pos}")
+        data[btn_id] = normalizar_posicao(pos)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
+        print(f"[DEBUG] JSON atualizado com {btn_id}: {data[btn_id]}")
 
     def on_pre_enter(self):
         print("[DEBUG] Entrou na TelaIntroducao")
+        if not self.video_enabled:
+            self.on_video_end()
+        else:
+            Clock.schedule_once(self._fallback_video_intro, 1.2)
         self.load_button_positions()
 
-    def load_button_positions(self):
-        from kivy.core.window import Window
-        import json
+    def _fallback_video_intro(self, dt):
+        """Evita tela branca se o provider de vídeo falhar silenciosamente."""
+        try:
+            video = self.ids.intro_video
+            if self.ids.main_content.opacity == 0 and getattr(video, 'position', 0) == 0:
+                self.on_video_end()
+        except Exception:
+            self.on_video_end()
 
+    def load_button_positions(self):
         caminho = resource_path_full('posicoes_botoes.json', 'configs')
         print("[DEBUG] Entrou em load_button_positions")
 
         try:
             with open(caminho, "r", encoding="utf-8") as f:
                 botoes = json.load(f)
-                for btn_id, pos in botoes.get("tela_intro", {}).items():
-                    print(f"[DEBUG] Ajustando {btn_id}: {pos}")
-                    print(f"[DEBUG] Window atual: largura={Window.width}, altura={Window.height}")
+            if "tela_intro" in botoes:
+                botoes = botoes["tela_intro"]
+            for btn_id, pos in botoes.items():
+                if btn_id in self.ids:
                     self.ids[btn_id].pos = ajustar_posicao_letterbox(pos)
         except Exception as e:
             print(f"[ERRO] Falha ao carregar posições da tela_intro: {e}")
@@ -443,12 +533,14 @@ class TelaIntroducao(Screen):
         if os.path.exists(path):
             with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
+            if "tela_intro" in data:
+                data = data["tela_intro"]
             if btn_id in data:
                 print(f"[DEBUG] Lendo posição salva para {btn_id}: {data[btn_id]}")
-                return data[btn_id]
-        largura, altura = Window.size
-        print(f"[DEBUG] Posição padrão para {btn_id}: largura={largura}, altura={altura}")
-        return [largura * default_x, altura * default_y]
+                return ajustar_posicao_letterbox(data[btn_id])
+        largura_viewport, altura_viewport, offset_x, offset_y = calcular_viewport()
+        print(f"[DEBUG] Posição padrão para {btn_id}: largura={Window.width}, altura={Window.height}")
+        return [offset_x + largura_viewport * default_x, offset_y + altura_viewport * default_y]
 
     def on_video_end(self, *args):
         self.ids.intro_video.opacity = 0
@@ -491,6 +583,14 @@ class TelaIntroducao(Screen):
 
         popup.content = layout
         popup.open()
+        Clock.schedule_once(lambda dt: self._reset_popup_button_states(config_menu), 0)
+        Clock.schedule_once(lambda dt: self._reset_popup_button_states(config_menu), 0.05)
+        Clock.schedule_once(lambda dt: self._reset_popup_button_states(config_menu), 0.15)
+
+    def _reset_popup_button_states(self, root_widget):
+        for child in root_widget.walk():
+            if hasattr(child, 'reset_visual_state'):
+                child.reset_visual_state()
 
     def _show_error_popup(self, title, message):
         box = BoxLayout(orientation='vertical', spacing=10, padding=10)

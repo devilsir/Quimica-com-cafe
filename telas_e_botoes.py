@@ -1,11 +1,9 @@
 import os
 import sys
 import datetime
-os.environ['KIVY_AUDIO'] = 'ffpyplayer'
-os.environ['KIVY_VIDEO'] = 'ffpyplayer'
 os.environ['KIVY_IMAGE'] = 'sdl2'
 from kivy.config import Config
-Config.set('graphics', 'resizable', '1')  # impede redimensionamento
+Config.set('graphics', 'resizable', '0')  # janela fixa: desativa redimensionar/maximizar
 Config.set('graphics', 'width', '1366')
 Config.set('graphics', 'height', '705')
 Config.set('graphics', 'borderless', '0')  # janela com moldura
@@ -22,11 +20,15 @@ Window.size = (1366, 705)
 desired_size = (1366, 705)
 
 def enforce_size(instance, width, height):
-    """Garante que a janela continue no tamanho maximizado."""
-    if (width, height) != desired_size:
-        Window.size = desired_size
+    """Compatibilidade para atalhos de teste de resolução.
 
-Window.bind(on_resize=enforce_size)
+    Antes essa função forçava o tamanho da janela em todo resize. Isso brigava
+    com minimizar/maximizar do Windows e podia recalcular botões em posições
+    erradas. Agora ela só ignora eventos inválidos de minimização.
+    """
+    if width < 200 or height < 200:
+        return
+
 from kivy.core.window import Window
 class Logger:
     def __init__(self, logfile_path):
@@ -81,6 +83,13 @@ def load_json_cached(path, encoding='utf-8', default=None):
         except Exception as e:
             print(f'[JSONCache] Erro ao carregar {path}: {e}')
     return default
+
+def invalidate_json_cache(path=None):
+    """Limpa o cache de JSON depois de salvar dados em disco."""
+    if path is None:
+        _JSON_CACHE.clear()
+    else:
+        _JSON_CACHE.pop(path, None)
 #  Definir base_path correto (se .exe, usa pasta do exe)
 if getattr(sys, 'frozen', False):
     base_path = os.path.dirname(sys.executable)
@@ -311,20 +320,27 @@ def mostrar_dica(self, dica_texto, dica_imagem=None):
     btn_fechar.bind(on_release=lambda *_: popup.dismiss())
     popup.open()
 def calcular_viewport():
+    largura_janela = Window.width or largura_original
+    altura_janela = Window.height or altura_original
+
+    # Durante minimizar/restaurar, alguns providers disparam resize com 0 ou
+    # valores muito pequenos. Usar esses valores entortava os botões.
+    if largura_janela < 200 or altura_janela < 200:
+        largura_janela = largura_original
+        altura_janela = altura_original
+
     aspect_ratio_original = largura_original / altura_original
-    aspect_ratio_tela = Window.width / Window.height
+    aspect_ratio_tela = largura_janela / altura_janela
 
     if aspect_ratio_tela > aspect_ratio_original:
-        # Tela mais larga
-        altura_viewport = Window.height
+        altura_viewport = altura_janela
         largura_viewport = altura_viewport * aspect_ratio_original
     else:
-        # Tela mais alta
-        largura_viewport = Window.width
+        largura_viewport = largura_janela
         altura_viewport = largura_viewport / aspect_ratio_original
 
-    offset_x = (Window.width - largura_viewport) / 2
-    offset_y = (Window.height - altura_viewport) / 2
+    offset_x = (largura_janela - largura_viewport) / 2
+    offset_y = (altura_janela - altura_viewport) / 2
 
     return largura_viewport, altura_viewport, offset_x, offset_y
 
@@ -366,8 +382,16 @@ def carregar_posicoes(tela, caminho_json):
         print(f"[AVISO] Arquivo de posições '{caminho_json}' não encontrado.")
 
 def ajustar_posicoes_para_tela():
-    """Atualiza todos os arquivos de posição reais com base nos arquivos de referência."""
+    """Garante arquivos de posição sem regravar posições já salvas.
+
+    Os JSONs guardam coordenadas-base do layout 1366x705. A adaptação para a
+    janela atual deve acontecer só em memória, via `ajustar_posicao_letterbox`.
+    Regravar esses arquivos no build causava posições duplicadamente escaladas
+    depois de minimizar/maximizar.
+    """
     for arquivo_original, arquivo_destino in arquivos_posicoes:
+        if os.path.exists(arquivo_destino):
+            continue
         if not os.path.exists(arquivo_original):
             print(f"Arquivo de referência não encontrado: {arquivo_original}")
             continue
@@ -375,12 +399,10 @@ def ajustar_posicoes_para_tela():
         with open(arquivo_original, 'r', encoding='utf-8') as f:
             dados = json.load(f)
 
-        novos_dados = {id_botao: ajustar_posicao_letterbox(posicao) for id_botao, posicao in dados.items()}
-
         with open(arquivo_destino, 'w', encoding='utf-8') as f:
-            json.dump(novos_dados, f, indent=4, ensure_ascii=False)
+            json.dump(dados, f, indent=4, ensure_ascii=False)
 
-        print(f"Ajustado e salvo: {arquivo_destino}")
+        print(f"Criado arquivo de posições: {arquivo_destino}")
 
 class ImageButton(ButtonBehavior, Image):
     """Botão com imagem, clicável."""
@@ -533,16 +555,12 @@ class HoverDraggableImageButton(DragBehavior, ButtonBehavior, Image):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        # Use o valor de self.source diretamente
         self.source_normal = self.source
         self.source_hover = self._add_suffix(self.source_normal, '_hover')
         self.source_down = self._add_suffix(self.source_normal, '_down')
         self._has_hover = os.path.exists(self.source_hover)
         self._has_down = os.path.exists(self.source_down)
         Window.bind(mouse_pos=self.on_mouse_pos)
-        # cache existence flags to avoid disk checks every mouse move
-        self._has_hover = os.path.exists(self.source_hover)
-        self._has_down = os.path.exists(self.source_down)
 
 
 
@@ -1108,7 +1126,7 @@ Builder.load_string('''#:import resource_path_full telas_e_botoes.resource_path_
                     multiline: False
                 HoverDraggableImageTextButton:
                     source_normal: resource_path_full('botao generico listarperguntas.png', 'assets')
-                    surce_down: 'botao generico listarperguntas_hover.png'
+                    source_down: resource_path_full('botao generico listarperguntas_hover.png', 'assets')
                     source_hover: resource_path_full('botao generico listarperguntas_hover.png', 'assets')
                     source: resource_path_full('botao generico listarperguntas.png', 'assets')
                     text: 'Escolher Arquivo'
@@ -1224,12 +1242,16 @@ class TelaInicial(Screen):
     bg_pos = ListProperty([0, 0])
 
     def atualizar_layout_resize(self, *args):
-        # Recalcula viewport
+        if Window.width < 200 or Window.height < 200:
+            return
+
         largura_viewport, altura_viewport, offset_x, offset_y = calcular_viewport()
         self.viewport_size = [largura_viewport, altura_viewport]
         self.bg_pos = [offset_x, offset_y]
-        # Recarrega posições dos botões
-        Clock.schedule_once(lambda dt: self.load_button_positions(), 0)
+
+        if hasattr(self, '_resize_reload_event') and self._resize_reload_event:
+            self._resize_reload_event.cancel()
+        self._resize_reload_event = Clock.schedule_once(lambda dt: self.load_button_positions(), 0.15)
 
     def on_enter(self, *args):
         super().on_enter(*args)
@@ -1426,46 +1448,6 @@ class TelaInicial(Screen):
             if hasattr(self, 'popup_resolucao'):
                 self.popup_resolucao.dismiss()
 
-    def on_musica_volume_change(instance, value):
-            if App.get_running_app().musica_fundo:
-                App.get_running_app().musica_fundo.volume = value
-            label_musica.text = f"Música de Fundo: {value:.2f}" # type: ignore # type: ignore
-
-            slider_musica.bind(value=on_musica_volume_change) # type: ignore # type: ignore
-
-        # Slider para efeitos sonoros
-            slider_efeitos = Slider(
-            min=0, max=1, value=App.get_running_app().som_acerto.volume if App.get_running_app().som_acerto else 0.5,
-            step=0.01
-        )
-            label_efeitos = Label(text=f"Efeitos Sonoros: {slider_efeitos.value:.2f}", font_size=dp(20))
-
-    def on_efeitos_volume_change(instance, value):
-        if App.get_running_app().som_acerto:
-            App.get_running_app().som_acerto.volume = value
-            if App.get_running_app().som_erro:
-                App.get_running_app().som_erro.volume = value
-            label_efeitos.text = f"Efeitos Sonoros: {value:.2f}" # type: ignore
-
-        slider_efeitos.bind(value=on_efeitos_volume_change) # type: ignore
-
-        content.add_widget(label_musica) # type: ignore
-        content.add_widget(slider_musica) # type: ignore
-        content.add_widget(label_efeitos) # type: ignore
-        content.add_widget(slider_efeitos) # type: ignore
-
-        popup = Popup(
-            title='Ajustar Volume',
-            separator_height=0,
-            title_size= dp(20),
-            content=content, # type: ignore
-            size_hint=(None, None),
-            size=(dp(400), dp(300)),
-            background = resource_path_full('popup genérico HD.png', 'assets')
-        )
-        popup.open()
-
-    
     def get_button_pos(self, btn_id, default_x, default_y):
         path = resource_path_full('posicoes_botoes_inicial.json', 'configs')
         data = load_json_cached(path, default={}) or {}
@@ -1515,6 +1497,7 @@ class TelaInicial(Screen):
         data[btn_id] = [x_real, y_real]
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)
+        invalidate_json_cache(path)
     
     def salvar_todas_posicoes(self):
         botoes = ['btn_iniciar', 'btn_adicionar', 'btn_listar', 'btn_voltar',
@@ -1531,6 +1514,7 @@ class TelaInicial(Screen):
         path = resource_path_full('posicoes_botoes_inicial.json', 'configs')
         with open(path, "w", encoding='utf-8') as f:
             json.dump(data, f, indent=4)
+        invalidate_json_cache(path)
 
     def popup_configurar_predefinicao(self, nome_predefinicao):
         if nome_predefinicao == "Escolher Predefinição":
@@ -1642,82 +1626,6 @@ class TelaInicial(Screen):
                 self.predef_names = list(predefinicoes.keys())
         else:
             self.predef_names = []
-
-    def iniciar_com_predefinicao(instance):
-        popup.dismiss() # type: ignore
-
-        tela_jogo = self.manager.get_screen('tela_jogo') # type: ignore
-        tela_jogo.num_teams = int(equipes_spinner.text) # type: ignore
-        tempo_str = tempo_spinner.text # type: ignore
-        minutos, segundos = tempo_str.split(':')
-        tela_jogo.time_limit = int(minutos) * 60 + int(segundos)
-
-        perguntas = predef_data.get('perguntas', []) # type: ignore
-        areas = list(set(p['area'] for p in perguntas))
-        dificuldades = list(set(p['dificuldade'].lower() for p in perguntas))
-
-        tela_jogo.selected_areas = areas
-        tela_jogo.selected_dificuldades = dificuldades
-        tela_jogo.usando_predefinicao = True
-        tela_jogo.perguntas_predefinicao = perguntas
-        tela_jogo.game_mode = predef_data.get('modo', 'Coffee Lovers') # type: ignore
-        tela_jogo.jogo_iniciado = False
-
-        app = App.get_running_app()
-        if getattr(app, 'game_started_once', False):
-            self.abrir_com_preload('tela_jogo') if hasattr(self, 'abrir_com_preload') else setattr(self.manager, 'current', 'loading_screen')
-        else:
-            app.game_started_once = True
-            self.manager.current = 'video_screen' # type: ignore
-
-        btn_confirmar.bind(on_release=iniciar_com_predefinicao) # type: ignore
-        popup.open() # type: ignore
-
-    def show_message_popup(title, message):
-        content = BoxLayout(
-            orientation='vertical',
-            spacing=dp(15),
-            padding=[dp(30), dp(30), dp(30), dp(30)]
-        )
-
-        # Mensagem com alinhamento central e cor branca
-        label = Label(
-            text=message,
-            font_size=dp(20),
-            halign='center',
-            valign='middle',
-            color=(1, 1, 1, 1)
-        )
-        label.bind(size=label.setter('text_size'))
-
-        # Botão OK com imagem de fundo
-        ok_button = Button(
-            text="OK",
-            size_hint_y=None,
-            height=dp(48),
-            font_size=dp(20),
-            color=(1, 1, 1, 1),
-            background_normal=resource_path_full('botao generico popup generico.png', 'assets'),
-            background_down=resource_path_full('botao generico popup generico.png', 'assets')
-        )
-
-        content.add_widget(label)
-        content.add_widget(ok_button)
-
-        # Criação do popup com fundo personalizado e sem título
-        popup = Popup(
-            title='',
-            separator_height=0,
-            title_size=0,
-            content=content,
-            size_hint=(None, None),
-            size=(dp(500), dp(250)),
-            background=resource_path_full('popup genérico HD.png', 'assets'),
-            background_color=(1, 1, 1, 1)
-        )
-
-        ok_button.bind(on_press=lambda *args: popup.dismiss())
-        popup.open()
 
     def iniciar_jogo(self):
         try:
@@ -1933,8 +1841,8 @@ class TelaInicial(Screen):
 
         def cancelar_jogo(instance):
             popup.dismiss()
-        confirmar_btn.bind(on_press=iniciar_jogo_confirmado)
-        cancelar_btn.bind(on_press=cancelar_jogo)
+        confirmar_btn.bind(on_release=iniciar_jogo_confirmado)
+        cancelar_btn.bind(on_release=cancelar_jogo)
         popup.open()
 
 class TelaJogo(Screen):
@@ -2434,6 +2342,7 @@ class AddEditQuestionScreen(Screen):
                 f.seek(0)
                 json.dump(data, f, ensure_ascii=False, indent=4)
                 f.truncate()
+                invalidate_json_cache(db_file)
             self.available_areas.append(area)
             self.ids.area_spinner.values = self.available_areas
             self.ids.area_spinner.text = area
@@ -2512,6 +2421,7 @@ class AddEditQuestionScreen(Screen):
                 f.seek(0)
                 json.dump(data, f, ensure_ascii=False, indent=4)
                 f.truncate()
+                invalidate_json_cache(db_file)
             self.atualizar_botao_cor(cor)
         except FileNotFoundError:
             show_message_popup("Erro", "Arquivo de perguntas não encontrado.")
@@ -2575,6 +2485,7 @@ class AddEditQuestionScreen(Screen):
                 f.seek(0)
                 json.dump(data, f, ensure_ascii=False, indent=4)
                 f.truncate()
+                invalidate_json_cache(db_file)
         except FileNotFoundError:
             show_message_popup("Erro", "Arquivo de perguntas não encontrado.")
             return
@@ -2660,9 +2571,6 @@ class QuestionListScreen(Screen):
     game_mode = StringProperty("Coffee Lovers")
     available_areas = ListProperty([])
     available_difficulties = ListProperty(['Fácil', 'Médio', 'Difícil'])  # <- ISSO RESOLVE O ERRO DO SPINNER
-
-    def get_button_pos(self, btn_id, default_x, default_y):
-        return self.button_positions.get(btn_id, (Window.width * default_x, Window.height * default_y))
 
     def on_pre_enter(self):
         print("[DEBUG] Entrou na QuestionListScreen")
@@ -2773,12 +2681,11 @@ class QuestionListScreen(Screen):
             show_message_popup("Erro", "Arquivo de perguntas não encontrado.")
             
     def get_button_pos(self, btn_id, default_x, default_y):
-        path = resource_path_full('posicoes_botoes_inicial.json', 'configs')
+        path = resource_path_full('posicoes_botoes_listar.json', 'configs')
         data = load_json_cached(path, default={}) or {}
         if btn_id in data:
             return ajustar_posicao_letterbox(data[btn_id])
-        
-        # Novo cálculo para posição padrão com letterbox
+
         largura_viewport, altura_viewport, offset_x, offset_y = calcular_viewport()
         return [offset_x + default_x * largura_viewport, offset_y + default_y * altura_viewport]
         
@@ -2790,22 +2697,24 @@ class QuestionListScreen(Screen):
             'btn_voltar_listar',
         ]
         data = {}
+        largura_viewport, altura_viewport, offset_x, offset_y = calcular_viewport()
         for btn_id in botoes:
             if btn_id in self.ids:
-                data[btn_id] = self.ids[btn_id].pos
+                pos = self.ids[btn_id].pos
+                x_real = (pos[0] - offset_x) * (largura_original / largura_viewport)
+                y_real = (pos[1] - offset_y) * (altura_original / altura_viewport)
+                data[btn_id] = [x_real, y_real]
         path = resource_path_full('posicoes_botoes_listar.json', 'configs')
-        with open(path, "w") as f:
-            json.dump(data, f)
+        with open(path, "w", encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+        invalidate_json_cache(path)
 
     def carregar_posicoes(self):
         path = resource_path_full('posicoes_botoes_listar.json', 'configs')
-        if os.path.exists(path):
-            with open(path, "r") as f:
-                data = json.load(f)
-            for btn_id, pos in data.items():
-                print(f"[DEBUG] Resolução atual da janela- botoes listat: {Window.width}x{Window.height}")
-                if btn_id in self.ids:
-                    self.ids[btn_id].pos = pos
+        data = load_json_cached(path, default={}) or {}
+        for btn_id, pos in data.items():
+            if btn_id in self.ids:
+                self.ids[btn_id].pos = ajustar_posicao_letterbox(pos)
 
 
 
@@ -2853,13 +2762,12 @@ class RoletaApp(App):
     
     
     def build(self):
-        Window.maximize()
+        Window.size = desired_size
         Window.set_title('Roleta Química')
         Window.set_icon(resource_path_full('icone.ico', 'assets'))  # coloque dentro do build
         self.carregar_cor_fundo()
         ajustar_posicoes_para_tela()
-        Window.size = (1366, 705)
-        print(f"[DEBUG] Tamanho da janela forçado: {Window.size}")
+        print(f"[DEBUG] Tamanho da janela: {Window.size}")
         
         # 🔈 Carregar e tocar a música de fundo (dentro do build)
         self.musica_fundo = SoundLoader.load(resource_path_full('musicadefundo extendida (Remix).mp3', 'sons'))
@@ -2936,51 +2844,3 @@ if __name__ == '__main__':
     Window.set_icon(resource_path_full('icone.ico', 'assets'))
     #threading.Thread(target=hover_loop, daemon=True).start()
     RoletaApp().run()
-
-
-
-    def prepare_data(self):
-        try:
-            # Carrega o modo atual e abre o JSON correspondente
-            base = os.path.abspath("."); configs = os.path.join(base, "")
-            dbs = ["dataperguntas1ano_bncc.json","dataperguntas2ano_bncc.json","dataperguntas3ano_bncc.json","dataperguntas_coffeelovers.json"]
-            items = []
-            for fn in dbs:
-                path = os.path.join(configs, fn)
-                if os.path.exists(path):
-                    with open(path, "r", encoding="utf-8") as f:
-                        banco = json.load(f)
-                    for area, perguntas in banco.items():
-                        for p in perguntas:
-                            items.append({'area': area, 'dificuldade': p.get('dificuldade',''), 'pergunta': p.get('pergunta','')})
-            self._pending_items = items
-        except Exception:
-            self._pending_items = []
-
-    def start_chunked_build(self):
-        from kivy.clock import Clock
-        layout = getattr(self.ids, 'lista_perguntas_layout', None) or getattr(self.ids, 'perguntas_layout', None)
-        if not layout:
-            return
-        items = self._pending_items or []
-        if not items:
-            return
-        layout.clear_widgets()
-        batch = 30
-        data_iter = iter(items)
-        def _step(dt):
-            added = 0
-            from kivy.uix.label import Label
-            while added < batch:
-                try:
-                    item = next(data_iter)
-                except StopIteration:
-                    self._build_ev.cancel()
-                    return
-                lbl = Label(text=f"[{item.get('dificuldade','')}] {item.get('area','')}: {item.get('pergunta','')}", size_hint_y=None, height=dp(28))
-                layout.add_widget(lbl)
-                added += 1
-        if self._build_ev:
-            try: self._build_ev.cancel()
-            except Exception: pass
-        self._build_ev = Clock.schedule_interval(_step, 0)

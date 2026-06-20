@@ -159,7 +159,25 @@ class HistoricoScreen(Screen):
 
         sessions = list(reversed(HistoryManager.load_all_sessions()))
         if not sessions:
-            col.add_widget(Label(text="Nenhuma sessão registrada ainda.", font_size=dp(18)))
+            empty_box = BoxLayout(
+                orientation="vertical",
+                size_hint_y=None,
+                height=dp(140),
+                padding=(0, dp(24), 0, 0)
+            )
+            empty_label = Label(
+                text="Nenhuma sessão registrada ainda.",
+                font_size=dp(20),
+                halign="center",
+                valign="middle",
+                size_hint=(1, None),
+                height=dp(72)
+            )
+            empty_label.bind(
+                size=lambda inst, val: setattr(inst, "text_size", (val[0], val[1]))
+            )
+            empty_box.add_widget(empty_label)
+            col.add_widget(empty_box)
         else:
             for ses in sessions:
                 btn = Button(
